@@ -1,9 +1,15 @@
-CREATE DATABASE chat;
+/*CREATE DATABASE chat;*/
 
 USE chat;
 
 CREATE TABLE messages (
-  /* Describe your table here.*/
+  name varchar(20),
+  roomname varchar(20),
+  text varchar(140)
+);
+
+CREATE TABLE users (
+  name varchar(20),
 );
 
 /* Create other tables and define schemas for them here! */
@@ -15,3 +21,9 @@ CREATE TABLE messages (
  *    mysql -u root < server/schema.sql
  *  to create the database and the tables.*/
 
+/*table for messages
+    text, username, roomname
+  table for users
+    name, friends
+
+*/
