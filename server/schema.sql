@@ -9,7 +9,7 @@ CREATE TABLE messages (
 );
 
 CREATE TABLE users (
-  name varchar(20),
+  name varchar(20)
 );
 
 /* Create other tables and define schemas for them here! */
@@ -27,3 +27,7 @@ CREATE TABLE users (
     name, friends
 
 */
+
+INSERT into messages
+  (name, roomname, text)
+  values ('devon', 'hackreactor', 'hello world');
