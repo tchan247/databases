@@ -5,6 +5,7 @@ var bluebird = require('bluebird');
 module.exports = {
   messages: {
     get: function (req, res) {
+      console.log("DOSENT MATTER");
       models.messages.get(function(rows){
         console.log("Rows: " + JSON.stringify(rows));
         res.status(200);

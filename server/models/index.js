@@ -6,9 +6,9 @@ module.exports = {
     get: function (callback) {
       db.connection.query("SELECT * FROM messages;", function(err, rows, fields) {
         if(err) throw err;
-
+        console.log("GET ROWS: " + rows);
         callback(rows);
-        db.connection.end();
+        // db.connection.end();
       })
     }, // a function which produces all the messages
     post: function (data, callback) {
@@ -18,7 +18,7 @@ module.exports = {
         if(err) throw err;
 
         callback();
-        db.connection.end();
+        // db.connection.end();
       })
     }
   },
