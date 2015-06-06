@@ -12,15 +12,15 @@ module.exports = {
       })
     }, // a function which produces all the messages
     post: function (data, callback) {
-      db.connection.query("INSERT into messages (name, roomname, text) values ('" + data.name
-        + "','" + data.roomname + "','" + data.text + "');"
-      ,function(err, rows, fields) {
+      var qString = "INSERT into messages (name) values ('" + data.username + "');";
+      console.log(qString);
+      db.connection.query(qString,function(err) {
         if(err) throw err;
 
         callback();
         db.connection.end();
       })
-    } // a function which can be used to insert a message into the database
+    }
   },
 
   users: {
@@ -34,8 +34,9 @@ module.exports = {
        })
     },
     post: function (data, callback) {
-      db.connection.query("INSERT into messages (name) values ('" + data.name + "');"
-      ,function(err, rows, fields) {
+      var qString = "INSERT into users (name) values ('" + data.username + "');";
+      console.log(qString);
+      db.connection.query(qString,function(err) {
         if(err) throw err;
 
         callback();
@@ -45,3 +46,19 @@ module.exports = {
   }
 };
 
+
+
+
+
+
+// post: function (data, callback) {
+//       var queryString = "INSERT into messages (name) values ('" + data.username + "');"; // + "', \"room\" , \"In mercy's name, three days is all I need.\");"
+//         // + "','" + data.roomname + "','" + data.message + "');";
+//       console.log("QUERY STRING: " + queryString);
+//       db.connection.query(queryString, function(err) {
+//         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+//         if(err) throw err;
+//         callback();
+//         db.connection.end();
+//       })
+//     } // a function which can be used to insert a message into the database

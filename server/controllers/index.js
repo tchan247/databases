@@ -12,9 +12,7 @@ module.exports = {
       });
     }, // a function which handles a get request for all messages
     post: function (req, res) {
-      // var data = JSON.parse(req.data);
-      console.log(req.data);
-      models.messages.post(req.data, function(){
+      models.messages.post(req.body, function(){
         res.send();
       });
     } // a function which handles posting a message to the database
@@ -30,11 +28,13 @@ module.exports = {
       });
     },
     post: function (req, res) {
-      models.users.post(req, function(){
+      models.users.post(req.body, function(){
         res.send();
       });
     }
   }
 };
 
-// module.exports.messages.post({data:{name: "terry", roomname:"HR", text:"hello"}});
+// module.exports.messages.post({body:{username: "ter1234ry", roomname:"HR", message:"hrrrrrrello"}});
+// module.exports.users.post({body:{username: "ter1234ry"}});
+
