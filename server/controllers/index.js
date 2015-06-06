@@ -35,6 +35,6 @@ module.exports = {
   }
 };
 
-// module.exports.messages.post({body:{username: "ter1234ry", roomname:"HR", message:"hrrrrrrello"}});
+// module.exports.messages.post({body:{username: "ter1234ry", roomname:"HR", text:"hrrrrrrello"}});
 // module.exports.users.post({body:{username: "ter1234ry"}});
 

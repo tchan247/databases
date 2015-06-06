@@ -12,9 +12,9 @@ module.exports = {
       })
     }, // a function which produces all the messages
     post: function (data, callback) {
-      var qString = "INSERT into messages (name) values ('" + data.username + "');";
-      console.log(qString);
-      db.connection.query(qString,function(err) {
+      var qString = "INSERT into messages SET ?";
+      console.log(data);
+      db.connection.query(qString, data, function(err) {
         if(err) throw err;
 
         callback();
@@ -34,13 +34,13 @@ module.exports = {
        })
     },
     post: function (data, callback) {
-      var qString = "INSERT into users (name) values ('" + data.username + "');";
+      var qString = "INSERT into users (username) values ('" + data.username + "');";
       console.log(qString);
       db.connection.query(qString,function(err) {
         if(err) throw err;
 
         callback();
-        db.connection.end();
+        // db.connection.end();
       })
     }
   }

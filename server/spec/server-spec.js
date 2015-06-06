@@ -38,7 +38,7 @@ describe("Persistent Node Chat Server", function() {
               uri: "http://127.0.0.1:3000/classes/messages",
               json: {
                 username: "Valjean",
-                message: "In mercy's name, three days is all I need.",
+                text: "In mercy's name, three days is all I need.",
                 roomname: "Hello"
               }
       }, function () {
@@ -49,6 +49,13 @@ describe("Persistent Node Chat Server", function() {
         // your message table, since this is schema-dependent.
         var queryString = "SELECT * FROM messages";
         var queryArgs = [];
+
+        // dbConnection.query("insert into messages (name) values (testing);", function(err, rows, fields){
+        // });
+
+        // dbConnection.query(queryString, function(err, rows, fields){
+        //   console.log("SPEC ROWS: "+rows);
+        // });
 
         dbConnection.query(queryString, queryArgs, function(err, results) {
           console.log(results);

@@ -3,13 +3,13 @@
 USE chat;
 
 CREATE TABLE messages (
-  name varchar(20),
+  username varchar(20),
   roomname varchar(20),
   text varchar(140)
 );
 
 CREATE TABLE users (
-  name varchar(20)
+  username varchar(20)
 );
 
 /* Create other tables and define schemas for them here! */
@@ -29,5 +29,5 @@ CREATE TABLE users (
 */
 
 INSERT into messages
-  (name, roomname, text)
+  (username, roomname, text)
   values ('devon', 'hackreactor', 'hello world');
